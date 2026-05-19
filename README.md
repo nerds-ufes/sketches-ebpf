@@ -1,5 +1,14 @@
 # ebpf-cms-toy
 
+![License](https://img.shields.io/badge/license-GPL--2.0-blue)
+![Language](https://img.shields.io/badge/language-C-blue)
+![eBPF](https://img.shields.io/badge/eBPF-TC%20egress-orange)
+![Kernel](https://img.shields.io/badge/kernel-%E2%89%A55.8-green)
+![Arch](https://img.shields.io/badge/arch-x86__64-lightgrey)
+![Topic](https://img.shields.io/badge/topic-Count--Min%20Sketch-purple)
+![GitHub last commit](https://img.shields.io/github/last-commit/nerds-ufes/sketches-ebpf)
+![GitHub repo size](https://img.shields.io/github/repo-size/nerds-ufes/sketches-ebpf)
+
 A didactic implementation of a **Count-Min Sketch (CMS)** in eBPF/TC egress to collect per-flow packet statistics without storing exact flow state. Designed as a toy example for teaching probabilistic data structures applied to network monitoring.
 
 ## Overview
@@ -70,8 +79,8 @@ ebpf-cms-toy/
 ├── cms_kern.c     # eBPF program — TC egress hook
 ├── cms_user.c     # Userspace loader, reporter, and cleaner
 ├── Makefile
-├── start.sh       # Load CMS onto interface
-├── traffic.sh     # Generate demo traffic (ping, HTTP, download)
+├── init.sh        # Load CMS onto interface
+├── test.sh        # Generate demo traffic (ping, HTTP, download)
 └── stop.sh        # Send SIGINT, print report, clean up
 ```
 
