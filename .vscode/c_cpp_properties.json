@@ -1,0 +1,48 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include",
+                "/usr/include/bpf",
+                "/usr/include/x86_64-linux-gnu"
+            ],
+            "defines": [
+                "__TARGET_ARCH_x86",
+                "__BPF_TRACING__"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}
+EOF
+Os squiggles vão sumir. Mas o importante agora é rodar — o código compila corretamente:
+bashsudo ./cms_user enp0s3Você disse: #include errors detected.#include errors detected. Please update your includePath. Squiggles are disabled for this translation unit (/home/sci-admin/code/sketch-ebpf/cms_user.c).C/C++(1696)
+could not open source file "stdio.h" (no directories in search list). Please run the 'Select IntelliSense Configuration...' command to locate your system headers.C/C++14:53Claude respondeu: Atualize o ccppproperties.Atualize o c_cpp_properties.json para cobrir também o cms_user.c:
+bashcat > .vscode/c_cpp_properties.json << 'EOF'
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include",
+                "/usr/include/bpf",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/lib/gcc/x86_64-linux-gnu/13/include"
+            ],
+            "defines": [
+                "__TARGET_ARCH_x86",
+                "__BPF_TRACING__"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
