@@ -86,7 +86,7 @@ ebpf-cms-toy/
 
 ## Requirements
 
-- Linux kernel ≥ 5.8 (BTF support required)
+- Ubuntu Server 24.04 VM (Virtualbox)
 - clang ≥ 10
 - libbpf-dev
 - iproute2 ≥ 5.x (`tc` with eBPF support)
