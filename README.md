@@ -87,8 +87,8 @@ ebpf-cms-toy/
 ## Requirements
 
 - Ubuntu Server 24.04 VM (Virtualbox)
--- user: ebpf-admin
--- passwd: ebpf
+  - user: ebpf-admin
+  - passwd: ebpf
 - clang ≥ 10
 - libbpf-dev
 - iproute2 ≥ 5.x (`tc` with eBPF support)
